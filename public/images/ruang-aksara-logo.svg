@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Ruang Aksara Logo</title>
+  <desc id="logoDesc">Silhouette of a child reading on a crescent moon with sparkles</desc>
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#f4f8ff" stop-opacity="0.85"/>
+    </linearGradient>
+    <mask id="crescent-mask">
+      <rect width="512" height="512" fill="#fff"/>
+      <circle cx="350" cy="160" r="210" fill="#000"/>
+    </mask>
+  </defs>
+  <g fill="#ffffff">
+    <circle cx="220" cy="296" r="230" mask="url(#crescent-mask)" fill="url(#glow)"/>
+    <path d="M168 410c0-18 64-32 144-32s144 14 144 32-64 32-144 32-144-14-144-32z" opacity="0.65"/>
+    <path d="M244 362l8-58-40-28c-10-7-9-23 2-29l64-32c11-6 24-6 35 0l82 41c8 4 9 15 1 20l-74 48-4 46c-1 11-10 19-21 19h-43c-11 0-20-9-18-19z"/>
+    <circle cx="274" cy="184" r="46"/>
+    <path d="M318 207l88-36c8-3 17 3 17 12v88l-86 35c-8 3-17-3-17-12z" opacity="0.92"/>
+    <path d="M312 208l-62-24c-9-4-19 3-19 13v74l62 24c9 4 19-3 19-13z" opacity="0.85"/>
+    <path d="M146 414c34 20 90 32 150 32s116-12 150-32l-6-12c-34 20-87 32-144 32s-110-12-144-32z" opacity="0.35"/>
+    <path d="M382 128c0-9 7-16 16-16s16 7 16 16-7 16-16 16-16-7-16-16zm-38-38c0-8 6-14 14-14s14 6 14 14-6 14-14 14-14-6-14-14zm70 60c0-6 5-11 11-11s11 5 11 11-5 11-11 11-11-5-11-11z"/>
+  </g>
+</svg>
