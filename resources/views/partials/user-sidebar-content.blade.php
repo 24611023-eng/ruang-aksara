@@ -48,6 +48,10 @@
     ];
 @endphp
 
+<style>
+    .sidebar.hidden { transform: none !important; }
+</style>
+
 <div class="sidebar-brand">
     <a href="{{ route('home') }}">
         @if(file_exists(public_path('images/ruang-aksara-logo-fix.jpeg')))

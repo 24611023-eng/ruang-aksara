@@ -155,7 +155,7 @@
     </style>
 </head>
 <body class="bg-gray-100">
-    @if($useSidebarLayout)
+    @if($useSidebarLayout && auth()->check() && auth()->user()->role === 'user')
         <button id="hamburgerBtn" class="hamburger-btn" type="button" title="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false" onclick="toggleSidebar()">
             <span></span>
             <span></span>
@@ -164,7 +164,7 @@
 
         <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-        <aside class="sidebar hidden" id="sidebar">
+        <aside class="sidebar" id="sidebar">
             @include('partials.user-sidebar-content')
         </aside>
 

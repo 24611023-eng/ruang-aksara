@@ -821,17 +821,21 @@
         
 </head>
 <body class="font-sans antialiased">
-    <button id="hamburgerBtn" class="hamburger-btn" type="button" title="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false" onclick="toggleSidebar()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    @auth
+        @if(auth()->user()->role === 'user')
+        <button id="hamburgerBtn" class="hamburger-btn" type="button" title="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-    <aside class="sidebar hidden" id="sidebar">
-        @include('partials.user-sidebar-content')
-    </aside>
+        <aside class="sidebar" id="sidebar">
+            @include('partials.user-sidebar-content')
+        </aside>
+        @endif
+    @endauth
 
     <div class="main-wrapper" id="mainWrapper">
         <div class="content-wrapper">

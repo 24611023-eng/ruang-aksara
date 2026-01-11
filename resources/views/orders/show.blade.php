@@ -28,7 +28,7 @@
 
     <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-    <aside class="sidebar hidden" id="sidebar">
+    <aside class="sidebar" id="sidebar">
         @include('partials.user-sidebar-content')
     </aside>
 
