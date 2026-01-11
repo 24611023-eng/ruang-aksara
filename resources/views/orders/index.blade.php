@@ -7,6 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+    <!-- Fallback agar sidebar selalu tampil untuk user -->
+    <style>
+        #sidebar { transform: none !important; display: block !important; left: 0 !important; opacity: 1 !important; }
+        #mainWrapper { margin-left: 280px !important; }
+    </style>
     <style>
         body {
             background:
@@ -233,19 +238,23 @@
     </style>
 </head>
 <body class="font-sans antialiased">
-    <button id="hamburgerBtn" class="hamburger-btn" type="button" title="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false" onclick="toggleSidebar()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    @auth
+        @if(auth()->user()->role === 'user')
+        <button id="hamburgerBtn" class="hamburger-btn" type="button" title="Toggle Sidebar" aria-controls="sidebar" aria-expanded="false" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-    <aside class="sidebar" id="sidebar">
-        @include('partials.user-sidebar-content')
-    </aside>
+        <aside class="sidebar" id="sidebar">
+            @include('partials.user-sidebar-content')
+        </aside>
+        @endif
+    @endauth
 
-    <div class="main-wrapper" id="mainWrapper">
+    <div class="main-wrapper sidebar-open" id="mainWrapper">
         <div class="content-wrapper">
             <div class="mx-auto max-w-6xl space-y-6">
                 <header class="hero-header">
