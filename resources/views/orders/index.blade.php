@@ -7,11 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
-    <!-- Fallback agar sidebar selalu tampil untuk user -->
-    <style>
-        #sidebar { transform: none !important; display: block !important; left: 0 !important; opacity: 1 !important; }
-        #mainWrapper { margin-left: 280px !important; }
-    </style>
     <style>
         body {
             background:
